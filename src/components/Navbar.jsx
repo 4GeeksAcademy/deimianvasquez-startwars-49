@@ -32,7 +32,7 @@ export const Navbar = () => {
 										>
 											<Link
 												className="dropdown-item"
-												to={`/people/${item._id}`}>{item.properties.name}</Link>
+												to={`/${item.narure}/${item._id}`}>{item.properties.name}</Link>
 											<button
 												className="btn btn-outline-danger me-2"
 												onClick={() => {
@@ -44,7 +44,7 @@ export const Navbar = () => {
 												aria-label="Remove from favorites"
 												title="Remove from favorites"
 											>
-												<i class="far fa-trash-alt"></i>
+												<i className="far fa-trash-alt"></i>
 											</button>
 										</li>
 									)
@@ -53,9 +53,6 @@ export const Navbar = () => {
 								<li><span className="dropdown-item">No favorites</span></li>
 							)
 						}
-						{/* <li><a className="dropdown-item" href="#">Action</a></li>
-						<li><a className="dropdown-item" href="#">Another action</a></li>
-						<li><a className="dropdown-item" href="#">Something else here</a></li> */}
 					</ul>
 				</div>
 			</div>

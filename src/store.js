@@ -12,9 +12,10 @@ export const initialStore = () => {
         title: "Do my homework",
         background: null,
       }
-    ], 
+    ],
     favorites: [],
     characters: [],
+    planets: [],
   }
 }
 
@@ -42,7 +43,11 @@ export default function storeReducer(store, action = {}) {
         ...store,
         characters: action.payload
       }
-
+    case 'SET_PLANETS':
+      return {
+        ...store,
+        planets: action.payload
+      }
     case 'REMOVE_FAVORITE':
       return {
         ...store,

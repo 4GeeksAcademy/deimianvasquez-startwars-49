@@ -2,24 +2,24 @@ import { useState, useEffect } from "react"
 import useGlobalReducer from "../hooks/useGlobalReducer"
 import { useParams } from "react-router-dom"
 
-export const PeopleDetail = () => {
+export const PlanetDetail = () => {
     const { store } = useGlobalReducer()
-    const { characters } = store
+    const { planets } = store
     const { theId } = useParams()
 
     const [detail, setDetail] = useState(null)
 
     const getDetail = () => {
-        const character = characters.find((item) => item._id === theId)
-        if (character) {
-            setDetail(character)
+        const planet = planets.find((item) => item._id === theId)
+        if (planet) {
+            setDetail(planet)
         }
     }
 
     useEffect(() => {
         getDetail()
     }
-        , [theId, characters])
+        , [theId, planets])
 
     return (
         <div className="container mt-5">
@@ -44,27 +44,27 @@ export const PeopleDetail = () => {
 
                     </p>
                     <p>
-                        <span>Birth Year</span>
-                        {detail?.properties.birth_year}
+                        <span>Climate</span>
+                        {detail?.properties.climate}
 
                     </p>
                     <p>
-                        <span>Gender</span>
-                        {detail?.properties.gender}
+                        <span>Population</span>
+                        {detail?.properties.population}
                     </p>
                     <p>
-                        <span>Height</span>
-                        {detail?.properties.height}
+                        <span>Orbital Period</span>
+                        {detail?.properties.orbital_period}
 
                     </p>
                     <p>
-                        <span>Skin</span>
-                        {detail?.properties.skin_color}
+                        <span>Rotation Period</span>
+                        {detail?.properties.rotation_period}
 
                     </p>
                     <p>
-                        <span>Eye Color</span>
-                        {detail?.properties.eye_color}
+                        <span>Diameter</span>
+                        {detail?.properties.diameter}
 
                     </p>
                 </div>
